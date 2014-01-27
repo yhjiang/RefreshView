@@ -150,6 +150,15 @@
             }];
 			break;
         }
+            case MJRefreshStateNoMoreData:
+        {
+            _statusLabel.text = MJRefreshFooterNoMoreData;
+            [UIView animateWithDuration:MJRefreshAnimationDuration animations:^{
+                UIEdgeInsets inset = _scrollView.contentInset;
+                inset.bottom = 0;
+                _scrollView.contentInset = inset;
+            }];
+        }
             
         default:
             break;

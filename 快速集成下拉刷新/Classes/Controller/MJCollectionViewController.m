@@ -67,6 +67,8 @@ NSString *const MJCollectionViewCellIdentifier = @"Cell";
 
 - (void)doneWithView:(MJRefreshBaseView *)refreshView
 {
+    
+    
     // 刷新表格
     [self.collectionView reloadData];
     

@@ -24,6 +24,7 @@ extern NSString *const MJRefreshBundleName;
 extern NSString *const MJRefreshFooterPullToRefresh;
 extern NSString *const MJRefreshFooterReleaseToRefresh;
 extern NSString *const MJRefreshFooterRefreshing;
+extern NSString *const MJRefreshFooterNoMoreData;
 
 extern NSString *const MJRefreshHeaderPullToRefresh;
 extern NSString *const MJRefreshHeaderReleaseToRefresh;

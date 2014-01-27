@@ -15,7 +15,8 @@ typedef enum {
 	MJRefreshStatePulling = 1, // 松开就可以进行刷新的状态
 	MJRefreshStateNormal = 2, // 普通状态
 	MJRefreshStateRefreshing = 3, // 正在刷新中的状态
-    MJRefreshStateWillRefreshing = 4
+    MJRefreshStateWillRefreshing = 4,
+    MJRefreshStateNoMoreData = 5    //上拉加载更多时候显示没有更多数据
 } MJRefreshState;
 
 // 控件的类型

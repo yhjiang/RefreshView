@@ -2,7 +2,7 @@
 //  MJTableViewController.m
 //  快速集成下拉刷新
 //
-//  Created by mj on 14-1-3.
+//  Created by ; on 14-1-3.
 //  Copyright (c) 2014年 itcast. All rights reserved.
 //
 /*
@@ -19,6 +19,8 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
     
     MJRefreshHeaderView *_header;
     MJRefreshFooterView *_footer;
+    
+    int _loadCount;
 }
 @end
 
@@ -27,6 +29,8 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    _loadCount = 0;
     
     // 1.注册
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:MJTableViewCellIdentifier];
@@ -113,6 +117,13 @@ NSString *const MJTableViewCellIdentifier = @"Cell";
 
 - (void)doneWithView:(MJRefreshBaseView *)refreshView
 {
+    //设置刷新四次以后，变为无更多数据
+    _loadCount ++;
+    if (_loadCount == 4) {
+        [refreshView setState:MJRefreshStateNoMoreData];
+        return;
+    }
+    
     // 刷新表格
     [self.tableView reloadData];
     // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态

@@ -252,6 +252,14 @@
                 _beginRefreshingBlock(self);
             }
 			break;
+            
+            
+        case MJRefreshStateNoMoreData:
+        {   //没有更多数据，隐藏箭头，停止转圈
+            _arrowImage.hidden = YES;
+            [_activityView stopAnimating];
+        }
+            break;
         default:
             break;
 	}
